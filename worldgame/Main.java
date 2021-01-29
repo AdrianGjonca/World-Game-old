@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 import worldgame.assets.AssetMan;
 import worldgame.graphics.DrawMan;
+import worldgame.player.PlayerMan;
 import worldgame.world.World;
 
 public class Main {
@@ -14,16 +15,14 @@ public class Main {
 		DrawMan.init(WindowMan.graphics(), 0, 0);
 		
 		World world = new World(100);
-		float x = 0;
-		float y = 0;
 		while(true) {
 			System.out.println(FrameLog.fps());
-			//
+			/////
+			DrawMan.camera(PlayerMan.x, PlayerMan.y);
 			world.render();
-			DrawMan.camera(x, y);
-			x += FrameLog.deltaTime * 32f;
-			y += FrameLog.deltaTime * 24f;
-			//
+			PlayerMan.render();
+			PlayerMan.x+=FrameLog.deltaTime()*8f;
+			/////
 			WindowMan.frame();
 			//FrameLog.cap(512);
 			FrameLog.next();

@@ -12,6 +12,7 @@ public class World {
 		for (int x = 0; x < size; x++) {
 			for (int y = 0; y < size; y++) {
 				map[x][y] = Tile.Grass;
+				if(x%2 == 0) map[x][y] = Tile.Leaves;
 			}
 		}
 	}
@@ -24,7 +25,7 @@ public class World {
 			for(y = posY-11; y<posY+11; y++) {
 				if(x>=0 && x<size &&
 				y>=0 && y<size) {
-					if(map[x][y] == Tile.Grass) DrawMan.draw(AssetMan.grass, x*16-hsize16, y*16-hsize16, 8, 8);
+					DrawMan.draw(AssetMan.TILES[map[x][y].ordinal()], x*16-hsize16, y*16-hsize16, 8, 8);
 				}
 			}
 		}
