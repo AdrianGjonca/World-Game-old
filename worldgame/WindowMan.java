@@ -31,7 +31,7 @@ public class WindowMan {
 	}
 	
 	public static void frame() {
-		g_pan.drawImage(img, 0, 0, null);
+		g_pan.drawImage(img, 0, 0, pan.getWidth(), pan.getHeight(), null);
 		g_pan = pan.getGraphics();
 		g_img.clearRect(0, 0, _Config.SCREEN_X, _Config.SCREEN_Y);
 	}

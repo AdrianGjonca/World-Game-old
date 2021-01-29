@@ -1,6 +1,6 @@
 package worldgame;
 
 public class _Config {
-	public static final int SCREEN_X = 800;
-	public static final int SCREEN_Y = 600;
+	public static final int SCREEN_X = 400;
+	public static final int SCREEN_Y = 300;
 }

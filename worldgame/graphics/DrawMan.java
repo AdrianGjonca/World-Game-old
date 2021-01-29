@@ -16,7 +16,7 @@ public class DrawMan {
 	}
 	
 	public static void draw(BufferedImage img, float x, float y, float centerx, float centery) {
-		x = -(x-camx)+_Config.SCREEN_X/2 - centerx;
+		x = (x-camx)+_Config.SCREEN_X/2 - centerx;
 		y = -(y-camy)+_Config.SCREEN_Y/2 - centery;
 		
 		if(
@@ -30,5 +30,13 @@ public class DrawMan {
 	public static void camera(float camx, float camy) {
 		DrawMan.camx = camx;
 		DrawMan.camy = camy;
+	}
+	
+	public static float getCamX() {
+		return camx;
+	}
+	
+	public static float getCamY() {
+		return camy;
 	}
 }
