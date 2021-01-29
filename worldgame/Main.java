@@ -1,7 +1,5 @@
 package worldgame;
 
-import java.awt.image.BufferedImage;
-
 import worldgame.assets.AssetMan;
 import worldgame.graphics.DrawMan;
 import worldgame.player.PlayerMan;
@@ -16,12 +14,17 @@ public class Main {
 		
 		World world = new World(100);
 		while(true) {
-			System.out.println(FrameLog.fps());
+			//System.out.println(FrameLog.fps());
 			/////
+			
+			PlayerMan.controller();
+			KeyMan.check();
+			
 			DrawMan.camera(PlayerMan.x, PlayerMan.y);
 			world.render();
 			PlayerMan.render();
-			PlayerMan.x+=FrameLog.deltaTime()*8f;
+			
+			
 			/////
 			WindowMan.frame();
 			//FrameLog.cap(512);

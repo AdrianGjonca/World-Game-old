@@ -1,5 +1,6 @@
 package worldgame;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -25,13 +26,17 @@ public class WindowMan {
 		frame.setSize(_Config.SCREEN_X, _Config.SCREEN_Y);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		pan.setBackground(Color.black);
 		
 		g_pan = pan.getGraphics();
 		g_img = img.createGraphics();
+		
+		frame.addKeyListener(new KeyMan());
 	}
 	
 	public static void frame() {
-		g_pan.drawImage(img, 0, 0, pan.getWidth(), pan.getHeight(), null);
+		int a = (int)(((float)pan.getHeight()/(float)_Config.SCREEN_Y)*(float)_Config.SCREEN_X);
+		g_pan.drawImage(img, pan.getWidth()/2-a/2, 0, a, pan.getHeight(), null);
 		g_pan = pan.getGraphics();
 		g_img.clearRect(0, 0, _Config.SCREEN_X, _Config.SCREEN_Y);
 	}
