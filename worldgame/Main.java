@@ -13,8 +13,9 @@ public class Main {
 		DrawMan.init(WindowMan.graphics(), 0, 0);
 		
 		World world = new World(100);
+		PlayerMan.init(world);
 		while(true) {
-			//System.out.println(FrameLog.fps());
+			System.out.println(FrameLog.fps());
 			/////
 			
 			PlayerMan.controller();
